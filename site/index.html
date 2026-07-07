@@ -356,6 +356,13 @@ footer .small{font-size:13px;opacity:.8;margin-top:8px}
   box-shadow:0 6px 20px rgba(230,57,78,.5);
 }
 .fixed-cta small{font-size:.75em;font-family:'M PLUS Rounded 1c',sans-serif;font-weight:700}
+.fixed-cta.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(20px)}
+.fixed-cta{transition:opacity .3s,transform .3s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
@@ -650,6 +657,15 @@ footer .small{font-size:13px;opacity:.8;margin-top:8px}
   }
   fetchCount();
   setInterval(fetchCount, 60000);
+
+  // エントリーセクション表示中は追従ボタンを隠す（フォーム入力の邪魔になるため）
+  var fixedCta = document.getElementById('fixedCta');
+  var entrySec = document.getElementById('entry');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      fixedCta.classList.toggle('hidden', entries[0].isIntersecting);
+    }, {threshold: 0.05}).observe(entrySec);
+  }
 
   // AJAX送信
   var form = document.getElementById('entryForm');
