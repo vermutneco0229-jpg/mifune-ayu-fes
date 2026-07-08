@@ -159,19 +159,20 @@ img{max-width:100%}
 .chip strong{color:var(--red)}
 .hero-cta{
   position:relative;z-index:2;
-  display:inline-block;
-  margin:20px 0 26px;
+  display:block;
+  width:min(92%,420px);
+  margin:22px auto 26px;
   background:linear-gradient(180deg,var(--red),#e6394e);
-  color:#fff;text-decoration:none;
-  font-size:clamp(16px,4.6vw,23px);
+  color:#fff;text-decoration:none;text-align:center;
+  font-size:clamp(15px,4.2vw,18px);
   line-height:1.5;
-  padding:16px 38px;border-radius:999px;
+  padding:13px 10px;border-radius:999px;
   box-shadow:0 6px 0 #b02237,0 12px 24px rgba(230,57,78,.35);
   animation:bounce 2.2s ease-in-out infinite;
 }
 .hero-cta:active{transform:translateY(4px);box-shadow:0 2px 0 #b02237}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero-cta small{display:block;font-size:.62em;font-weight:700;font-family:'Zen Maru Gothic',sans-serif;margin-top:2px}
+.hero-cta small{display:block;font-size:.78em;font-weight:700;font-family:'Zen Maru Gothic',sans-serif}
 
 /* swimming fish */
 .fishband{position:relative;height:80px;z-index:1}
@@ -233,15 +234,7 @@ section{padding:52px 18px}
   display:flex;flex-direction:column;
 }
 .ecard.king{border-color:var(--orange)}
-.ecard-head{
-  padding:16px 14px;text-align:center;color:#fff;
-  background:linear-gradient(135deg,var(--sea),var(--sea-deep));
-  font-size:clamp(18px,5vw,24px);
-  line-height:1.4;
-}
-.ecard.king .ecard-head{background:linear-gradient(135deg,var(--orange),#e05e00)}
-.ecard-head .emoji{font-size:1.35em;display:block;margin-bottom:2px}
-.ecard-head .sub-name{font-size:.6em;display:block;margin-top:2px}
+.ecard-banner{display:block;width:100%;height:auto}
 .ecard-body{padding:20px 20px 24px;flex:1;display:flex;flex-direction:column}
 @media(min-width:768px){.ecard-body{padding:22px 24px 26px}}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;justify-content:center}
@@ -280,10 +273,20 @@ section{padding:52px 18px}
   border-radius:20px;padding:16px 20px;text-align:center;
   font-size:clamp(17px,5vw,24px);
   line-height:1.6;
-  transform:rotate(-1.5deg);
   box-shadow:0 6px 0 #e0b000;
+  animation:freeswing 1.8s ease-in-out infinite;
 }
 .free-banner span{color:var(--red)}
+@keyframes freeswing{
+  0%,100%{transform:rotate(-1.5deg) scale(1)}
+  50%{transform:rotate(1.2deg) scale(1.04)}
+}
+.king-rules{
+  text-align:center;font-weight:700;
+  font-size:clamp(13px,3.7vw,16px);
+  line-height:2.1;
+  max-width:640px;margin:0 auto 30px;
+}
 
 /* king section */
 .king-sec{background:#fff;position:relative;overflow:hidden}
@@ -569,7 +572,7 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
   <img class="fv-img" src="images/fv.jpg" width="864" height="1821" fetchpriority="high"
     alt="御船 があっぱ祭 8月9日 午前中特別イベント『あゆのつかみ取り』9時〜12時 御船川河川敷 お祭り広場にて。同時開催・20名限定 あゆの掴み取り王決定戦『あゆ王に俺はなる！』参加無料！">
 
-  <a class="hero-cta pop" href="#entry">あゆ王決定戦に<br class="sp">エントリーする！<small>▼ 中学生以上・先着20名 ▼</small></a>
+  <a class="hero-cta pop" href="#entry">あゆ王決定戦にエントリー！<small>中学生以上・先着20名</small></a>
 
   <div class="fishband">
     <div class="swimfish" style="width:90px;height:50px;top:0;animation-duration:14s;">
@@ -603,7 +606,8 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 
     <div class="event-cards">
       <div class="ecard">
-        <div class="ecard-head pop"><span class="emoji">🐟💦</span>あゆのつかみどり</div>
+        <img class="ecard-banner" src="images/title-tsukami.jpg" width="1680" height="560" loading="lazy"
+          alt="『あゆのつかみ取り』先着500名・予約不要。対象は一人でプールに入れる年齢から小学6年生まで。参加者には焼いたアユを1匹プレゼント">
         <div class="ecard-body">
           <div class="tags">
             <span class="tag">小学生までのお子さま</span>
@@ -617,7 +621,8 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
       </div>
 
       <div class="ecard king">
-        <div class="ecard-head pop"><span class="emoji">👑🔥</span>あゆ王に俺はなる！<span class="sub-name">〜あゆの掴み取り王決定戦〜</span></div>
+        <img class="ecard-banner" src="images/title-king.jpg" width="1680" height="560" loading="lazy"
+          alt="あゆの掴み取り王決定戦『あゆ王に俺はなる！』20名限定・事前予約。中学生以上対象・参加無料">
         <div class="ecard-body">
           <div class="tags">
             <span class="tag">中学生以上</span>
@@ -638,17 +643,6 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
   <div class="wrap">
     <h2 class="sec-title pop"><span class="en">YAKITATE!</span>とったあゆは、<br class="sp">その場で炭火焼き🔥</h2>
     <p class="sec-lead">串にさして塩をふって、炭火でこんがり。<br class="sp">香ばしいにおいがたまらない！</p>
-
-    <div class="yaki-flow">
-      <div class="yaki-step"><div class="em">🐟</div><h3 class="pop">つかまえる！</h3><p>プールで自分の手でゲット</p></div>
-      <div class="yaki-step"><div class="em">🔥</div><h3 class="pop">炭火でやく！</h3><p>スタッフが焼き場でじっくり</p></div>
-      <div class="yaki-step"><div class="em">😋</div><h3 class="pop">たべる！</h3><p>あつあつを召しあがれ</p></div>
-    </div>
-
-    <div class="yaki-banner">
-      <div class="b1">つかみどりも、あゆ王決定戦も──</div>
-      <div class="b2 pop">焼きたてあゆを<br class="sp">1人1匹プレゼント！</div>
-    </div>
 
     <div class="photo-grid">
       <figure class="photo-slot">
@@ -672,9 +666,7 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 <!-- ============ INFO ============ -->
 <section class="info">
   <div class="wrap">
-    <h2 class="sr-only">あゆのつかみどり 開催概要</h2>
-    <img class="title-banner" src="images/title-tsukami.jpg" width="1680" height="560" loading="lazy"
-      alt="『あゆのつかみ取り』先着500名・予約不要。対象は一人でプールに入れる年齢から小学6年生まで。参加者には焼いたアユを1匹プレゼント">
+    <h2 class="sec-title pop"><span class="en">INFO</span>あゆのつかみどり<br class="sp"> 開催概要</h2>
     <p class="sec-lead">午前9時スタート！<br class="sp">　濡れてもいい服装で来てね💦</p>
 
     <table class="info-table">
@@ -694,28 +686,12 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 <!-- ============ KING ============ -->
 <section class="king-sec" id="king">
   <div class="wrap">
-    <h2 class="sr-only">あゆの掴み取り王決定戦『あゆ王に俺はなる！』</h2>
-    <img class="title-banner" src="images/title-king.jpg" width="1680" height="560" loading="lazy"
-      alt="あゆの掴み取り王決定戦『あゆ王に俺はなる！』20名限定・事前予約。中学生以上対象・参加無料">
+    <h2 class="sec-title pop"><span class="en">CHALLENGE</span>あゆ王に俺はなる！</h2>
     <p class="sec-lead">制限時間は3分！<br class="sp">　頂点に立つのは、だれだ👑</p>
 
-    <div class="rule-steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3 class="pop">3分間、とりまくれ！</h3>
-        <p>合図とともにプールへ！　制限時間3分であゆをつかみどり。10名×2プールで同時対決！</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3 class="pop">ざるで計量！</h3>
-        <p>つかまえたあゆをざるに集めて重さを計測。数じゃない、「重さ」がすべてだ！</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3 class="pop">最重量があゆ王！</h3>
-        <p>合計重量がいちばん重い挑戦者が「あゆ王」に。栄光と景品を手に入れろ！</p>
-      </div>
-    </div>
+    <p class="king-rules">合図とともにプールへとびこみ、3分間であゆをつかみどり！<br>
+    つかまえたあゆはざるで計量して、合計の重さで勝負します。<br>
+    いちばん重かった人が、栄えある「あゆ王」です。</p>
 
     <div class="king-info">
       <dl>
@@ -728,9 +704,8 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 
     <div class="prize-box">
       <h3 class="pop">🏆 景品</h3>
-      <p>栄えある「あゆ王」（優勝者）には──</p>
+      <p>上位3名に、この豪華セットをプレゼントします！</p>
       <div class="main-prize">🍢 やきとり券 ＆ 🍧 かき氷券セット</div>
-      <p>さらに上位3名にも景品を贈呈します！</p>
     </div>
   </div>
 </section>
@@ -791,8 +766,8 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
         </div>
 
         <div class="field">
-          <label for="f-mail">メールアドレス<span class="opt">任意</span></label>
-          <input type="email" id="f-mail" name="メールアドレス" placeholder="例）ayu@example.com">
+          <label for="f-mail">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="f-mail" name="メールアドレス" required placeholder="例）ayu@example.com">
         </div>
 
         <div class="field">
@@ -820,41 +795,9 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
     <p class="sec-lead">これだけ準備すれば、<br class="sp">あとは楽しむだけ！</p>
     <div class="note-list">
       <div class="note-item"><span class="ic">👕</span><span>ぜったいに濡れます！　<strong>濡れてもいい服装・着替え・タオル</strong>をお持ちください</span></div>
-      <div class="note-item"><span class="ic">👟</span><span>プール内はすべりやすいので、<strong>マリンシューズやかかとの留まるサンダル</strong>がおすすめ</span></div>
       <div class="note-item"><span class="ic">🥤</span><span>8月の炎天下です。<strong>水分補給・熱中症対策</strong>をしっかりと！</span></div>
       <div class="note-item"><span class="ic">🧒</span><span>お子さまから目を離さないよう、保護者の方のご協力をお願いします</span></div>
       <div class="note-item"><span class="ic">🐟</span><span>あゆの数には限りがあります（約600匹）。なくなり次第終了となる場合があります</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GALLERY ============ -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <h2 class="sec-title pop"><span class="en">GALLERY</span>会場のようす</h2>
-    <p class="sec-lead">写真は順次追加していきます📷<br class="sp">　おたのしみに！</p>
-    <div class="photo-grid three">
-      <figure class="photo-slot">
-        <div class="frame" data-src="images/photo1.jpg" data-alt="会場の特設プール">
-          <span class="ph-emoji">💦</span>
-          <span class="ph-text">写真をお楽しみに</span>
-        </div>
-        <figcaption>7m四方の特設プール</figcaption>
-      </figure>
-      <figure class="photo-slot">
-        <div class="frame" data-src="images/photo2.jpg" data-alt="あゆのつかみどりのようす">
-          <span class="ph-emoji">🐟</span>
-          <span class="ph-text">写真をお楽しみに</span>
-        </div>
-        <figcaption>つかみどりのようす</figcaption>
-      </figure>
-      <figure class="photo-slot">
-        <div class="frame" data-src="images/photo3.jpg" data-alt="会場のにぎわい">
-          <span class="ph-emoji">🎉</span>
-          <span class="ph-text">写真をお楽しみに</span>
-        </div>
-        <figcaption>みんなの笑顔</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -886,7 +829,7 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
   <p class="small">御船町 があっぱ祭 午前の部イベント<br class="sp">「あゆのつかみどり＆あゆ王に俺はなる！」<br>8月9日（日）9:00〜12:00｜御船川河川敷 お祭り広場</p>
 </footer>
 
-<a class="fixed-cta" href="#entry" id="fixedCta">👑 あゆ王決定戦にエントリー！<br><small>先着20名・残り<span id="fixedRemaining">--</span>名</small></a>
+<a class="fixed-cta" href="#entry" id="fixedCta">あゆ王決定戦にエントリー！<br><small>先着20名・残り<span id="fixedRemaining">--</span>名</small></a>
 
 <script>
 (function(){
