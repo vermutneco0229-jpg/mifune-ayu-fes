@@ -225,10 +225,22 @@ section{padding:52px 18px}
 /* two events */
 .events{background:#fff;padding-bottom:10px}
 .event-block{padding:0 0 42px}
-.eb-tsukami{background:#e8f7fd}
+.eb-tsukami{background:#fff}
 .eb-king{background:#fff}
-.eb-charapaki{background:#f7fbe0}
-.eb-charapaki .eb-note{color:#7a9e12}
+.yaki-sub{max-width:960px;margin:44px auto 0;padding:0 18px}
+.yaki-sub .sec-title{color:var(--orange)}
+.yaki-sub .sec-title .en{color:#ff9c5a}
+.charapaki-sec{background:#f7fbe0;padding:48px 18px}
+.charapaki-card{
+  max-width:720px;margin:0 auto;
+  background:#fff;border-radius:22px;overflow:hidden;
+  border:4px solid #c3d94e;
+  box-shadow:0 10px 30px rgba(122,158,18,.18);
+}
+.charapaki-card .cp-banner{display:block;width:100%;height:auto}
+.charapaki-card .cp-body{padding:20px 22px 24px}
+.charapaki-card .cp-body p{font-size:clamp(13.5px,3.8vw,15px)}
+.charapaki-card .cp-note{margin-top:14px;font-weight:900;text-align:center;color:#7a9e12;font-size:clamp(14px,4vw,16px)}
 .eb-banner{display:block;width:100%;height:auto}
 @media(min-width:960px){
   .event-block{padding-top:40px}
@@ -616,34 +628,9 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
     <p style="margin-top:10px">※きょうだいで一緒にプールに入れます。</p>
     <p class="eb-note">当日そのまま会場へGO！（先着 約500名）</p>
   </div>
-</section>
 
-<section class="event-block eb-king">
-  <img class="eb-banner" src="images/title-king.jpg" width="1680" height="840" loading="lazy"
-    alt="あゆの掴み取り王決定戦『あゆ王に俺はなる！』20名限定・事前予約。中学生以上対象・参加無料">
-  <div class="eb-inner">
-    <p>中学生以上〜大人まで参加OK！<br>
-    制限時間以内でつかまえたあゆの「重さ」で勝負する、ガチンコ競技イベント。<br>
-    初代「あゆ王」の称号を手にするのは誰だ！？</p>
-    <p style="margin-top:10px">上位入賞者には景品もご用意。<br>
-    腕に自信のある挑戦者、集まれ！</p>
-    <p class="eb-note">▼ このページから事前予約 ▼</p>
-  </div>
-</section>
-
-<section class="event-block eb-charapaki">
-  <img class="eb-banner" src="images/title-charapaki.jpg" width="1680" height="560" loading="lazy"
-    alt="先着600名様 キャラパキ無料配布もあるよ！">
-  <div class="eb-inner">
-    <p>会場にて、板チョコをパキパキ割って恐竜のキャラクターを取り出す “遊び”要素が詰まった（株）バンダイの大人気チョコレート菓子、キャラパキをプレゼント！</p>
-    <p class="eb-note">先着600名様・配布は当日会場にて</p>
-  </div>
-</section>
-
-<!-- ============ YAKI ============ -->
-<section class="yaki" id="yaki">
-  <div class="wrap">
-    <h2 class="sec-title pop"><span class="en">YAKITATE!</span>とったあゆは、<br class="sp">その場で炭火焼き🔥</h2>
+  <div class="yaki-sub">
+    <h3 class="sec-title pop"><span class="en">YAKITATE!</span>とったあゆは、<br class="sp">その場で炭火焼き🔥</h3>
     <p class="sec-lead">串にさして塩をふって、炭火でこんがり。<br class="sp">香ばしいにおいがたまらない！</p>
 
     <div class="photo-grid">
@@ -661,6 +648,32 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
         </div>
         <figcaption>この焼きたてあゆを、1人1匹プレゼント！</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section class="event-block eb-king">
+  <img class="eb-banner" src="images/title-king.jpg" width="1680" height="840" loading="lazy"
+    alt="あゆの掴み取り王決定戦『あゆ王に俺はなる！』20名限定・事前予約。中学生以上対象・参加無料">
+  <div class="eb-inner">
+    <p>中学生以上〜大人まで参加OK！<br>
+    制限時間以内でつかまえたあゆの「重さ」で勝負する、ガチンコ競技イベント。<br>
+    初代「あゆ王」の称号を手にするのは誰だ！？</p>
+    <p style="margin-top:10px">上位入賞者には景品もご用意。<br>
+    腕に自信のある挑戦者、集まれ！</p>
+    <p class="eb-note">▼ このページから事前予約 ▼</p>
+  </div>
+</section>
+
+<section class="charapaki-sec">
+  <div class="wrap">
+    <div class="charapaki-card">
+      <img class="cp-banner" src="images/title-charapaki.jpg" width="1680" height="560" loading="lazy"
+        alt="先着600名様 キャラパキ無料配布もあるよ！">
+      <div class="cp-body">
+        <p>会場にて、板チョコをパキパキ割って恐竜のキャラクターを取り出す “遊び”要素が詰まった（株）バンダイの大人気チョコレート菓子、キャラパキをプレゼント！</p>
+        <p class="cp-note">先着600名様・配布は当日会場にて</p>
+      </div>
     </div>
   </div>
 </section>
