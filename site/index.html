@@ -46,16 +46,29 @@ img{max-width:100%}
 .hero{
   position:relative;
   background:linear-gradient(180deg,#8fdcff 0%,#c9f0ff 45%,#7fd4f0 100%);
-  padding:34px 16px 0;
+  padding:0;
   text-align:center;
   overflow:hidden;
 }
 .fv-img{
   position:relative;z-index:2;
-  width:min(100%,480px);height:auto;
-  border-radius:22px;
-  border:5px solid #fff;
-  box-shadow:0 14px 40px rgba(0,110,158,.28);
+  display:block;margin:0 auto;
+  width:min(100%,620px);height:auto;
+}
+@media(min-width:660px){
+  .hero{padding-top:34px}
+  .fv-img{
+    border-radius:22px;
+    border:5px solid #fff;
+    box-shadow:0 14px 40px rgba(0,110,158,.28);
+  }
+}
+.title-banner{
+  display:block;
+  width:100%;max-width:840px;height:auto;
+  margin:0 auto 20px;
+  border-radius:18px;
+  box-shadow:0 8px 24px rgba(29,53,87,.15);
 }
 .sun{
   position:absolute;top:26px;right:6%;
@@ -659,7 +672,9 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 <!-- ============ INFO ============ -->
 <section class="info">
   <div class="wrap">
-    <h2 class="sec-title pop"><span class="en">INFO</span>あゆのつかみどり<br class="sp"> 開催概要</h2>
+    <h2 class="sr-only">あゆのつかみどり 開催概要</h2>
+    <img class="title-banner" src="images/title-tsukami.jpg" width="1680" height="560" loading="lazy"
+      alt="『あゆのつかみ取り』先着500名・予約不要。対象は一人でプールに入れる年齢から小学6年生まで。参加者には焼いたアユを1匹プレゼント">
     <p class="sec-lead">午前9時スタート！<br class="sp">　濡れてもいい服装で来てね💦</p>
 
     <table class="info-table">
@@ -679,9 +694,10 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 <!-- ============ KING ============ -->
 <section class="king-sec" id="king">
   <div class="wrap">
-    <div class="crown">👑</div>
-    <h2 class="sec-title pop"><span class="en">CHALLENGE</span>あゆ王に俺はなる！</h2>
-    <p class="sec-lead">あゆの掴み取り王決定戦<br class="sp">　〜頂点に立つのは、だれだ〜</p>
+    <h2 class="sr-only">あゆの掴み取り王決定戦『あゆ王に俺はなる！』</h2>
+    <img class="title-banner" src="images/title-king.jpg" width="1680" height="560" loading="lazy"
+      alt="あゆの掴み取り王決定戦『あゆ王に俺はなる！』20名限定・事前予約。中学生以上対象・参加無料">
+    <p class="sec-lead">制限時間は3分！<br class="sp">　頂点に立つのは、だれだ👑</p>
 
     <div class="rule-steps">
       <div class="step">
