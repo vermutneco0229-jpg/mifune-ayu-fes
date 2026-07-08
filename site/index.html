@@ -263,16 +263,15 @@ section{padding:52px 18px}
 .free-banner span{color:var(--red)}
 
 /* king section */
-.king-sec{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.king-sec .sec-title{color:var(--yellow)}
-.king-sec .sec-title .en{color:#7fd4f0}
-.king-sec .sec-lead{color:#dff3ff}
+.king-sec{background:#fff;position:relative;overflow:hidden}
+.king-sec .sec-title{color:var(--sea-deep)}
+.king-sec .sec-title .en{color:var(--sea)}
 .crown{font-size:clamp(42px,10vw,56px);text-align:center;margin-bottom:2px;animation:bounce 2.6s ease-in-out infinite}
 .rule-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
 @media(max-width:760px){.rule-steps{grid-template-columns:1fr;gap:14px;margin:26px 0}}
 .step{
-  background:rgba(255,255,255,.08);
-  border:2px solid rgba(255,255,255,.25);
+  background:#f2fbff;
+  border:2px solid #bfe6f5;
   border-radius:20px;padding:22px 18px;text-align:center;
 }
 .step .num{
@@ -281,15 +280,16 @@ section{padding:52px 18px}
   font-family:'Mochiy Pop One',sans-serif;
   font-size:19px;margin:0 auto 10px;
 }
-.step h3{font-size:clamp(16.5px,4.6vw,18px);margin-bottom:6px;color:var(--yellow)}
-.step p{font-size:clamp(13px,3.7vw,14px);color:#e8f6ff}
+.step h3{font-size:clamp(16.5px,4.6vw,18px);margin-bottom:6px;color:var(--sea-deep)}
+.step p{font-size:clamp(13px,3.7vw,14px);color:var(--ink)}
 .king-info{
-  background:rgba(255,255,255,.06);
+  background:#f8fcff;
+  border:2px solid #d5eefa;
   border-radius:20px;padding:8px 22px;margin-bottom:30px;
 }
 .king-info dl{display:grid;grid-template-columns:auto 1fr;gap:0 18px}
-.king-info dt{font-weight:900;color:var(--yellow);padding:10px 0;white-space:nowrap;border-bottom:1px dashed rgba(255,255,255,.2)}
-.king-info dd{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.2);font-size:15px}
+.king-info dt{font-weight:900;color:#e05e00;padding:10px 0;white-space:nowrap;border-bottom:1px dashed #d5eefa}
+.king-info dd{padding:10px 0;border-bottom:1px dashed #d5eefa;font-size:15px}
 .king-info dt:last-of-type,.king-info dd:last-of-type{border-bottom:none}
 @media(max-width:600px){
   .king-info{padding:6px 18px}
@@ -331,14 +331,29 @@ section{padding:52px 18px}
 }
 .remaining .unit{font-size:.5em}
 .counter-sub{font-weight:700;color:var(--ink);font-size:clamp(12.5px,3.5vw,14px);margin-top:4px}
-.fish-slots{
-  display:grid;grid-template-columns:repeat(10,1fr);
-  gap:5px;max-width:420px;margin:16px auto 0;
+.gauge{
+  position:relative;height:32px;max-width:400px;
+  margin:18px auto 4px;
+  background:#e9f7fd;border:3px solid #bfe6f5;border-radius:999px;
+  overflow:hidden;
 }
-.slot{width:100%;aspect-ratio:1;opacity:.9}
-.slot svg{width:100%;height:100%}
-.slot.taken svg .body{fill:#c5d3de}
-.slot.taken{opacity:.45}
+.gauge-fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,#7fd4f0,var(--sea));
+  border-radius:999px;
+  transition:width .8s ease;
+}
+.gauge-fish{
+  position:absolute;top:50%;left:4%;
+  transform:translate(-50%,-50%) scaleX(-1);
+  font-size:19px;line-height:1;
+  transition:left .8s ease;
+}
+.gauge-labels{
+  display:flex;justify-content:space-between;
+  max-width:400px;margin:0 auto;padding:0 10px;
+  font-size:11.5px;font-weight:700;color:#7a8ba0;
+}
 .full-msg{
   display:none;
   background:var(--red);color:#fff;border-radius:16px;
@@ -402,31 +417,27 @@ section{padding:52px 18px}
 .note-item .ic{font-size:20px;line-height:1.5}
 
 /* ===== yaki(炭火焼き) ===== */
-.yaki{
-  background:radial-gradient(ellipse at 50% 130%,#8a4413 0%,#3a2417 55%,#241812 100%);
-  color:#fff;position:relative;overflow:hidden;
-}
-.yaki .sec-title{color:var(--yellow)}
+.yaki{background:#fff;position:relative;overflow:hidden}
+.yaki .sec-title{color:var(--orange)}
 .yaki .sec-title .en{color:#ff9c5a}
-.yaki .sec-lead{color:#ffe8d1}
 .yaki-flow{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:12px;max-width:720px;margin:0 auto 28px;
 }
 .yaki-step{
-  background:rgba(255,255,255,.08);
-  border:2px solid rgba(255,210,63,.35);
+  background:#fff6e9;
+  border:2px solid #ffd9a1;
   border-radius:18px;padding:16px 8px;text-align:center;
 }
 .yaki-step .em{font-size:clamp(28px,8vw,44px);line-height:1.3}
-.yaki-step h3{font-size:clamp(12.5px,3.5vw,17px);color:var(--yellow);margin-top:4px;line-height:1.5}
-.yaki-step p{font-size:clamp(11px,3vw,13.5px);color:#ffe8d1;margin-top:2px;line-height:1.7}
+.yaki-step h3{font-size:clamp(12.5px,3.5vw,17px);color:#e05e00;margin-top:4px;line-height:1.5}
+.yaki-step p{font-size:clamp(11px,3vw,13.5px);color:#6b5136;margin-top:2px;line-height:1.7}
 .yaki-banner{
   max-width:640px;margin:0 auto 30px;
   background:linear-gradient(135deg,#ffb347,var(--orange));
   border-radius:22px;padding:20px 18px;text-align:center;
   transform:rotate(-1deg);
-  box-shadow:0 7px 0 rgba(0,0,0,.28),0 12px 30px rgba(255,122,26,.35);
+  box-shadow:0 7px 0 rgba(179,75,0,.35),0 12px 30px rgba(255,122,26,.25);
   color:var(--ink);
 }
 .yaki-banner .b1{font-size:clamp(12.5px,3.6vw,17px);font-weight:900}
@@ -444,8 +455,9 @@ section{padding:52px 18px}
 .photo-slot{margin:0}
 .photo-slot .frame{
   position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;
-  background:rgba(255,255,255,.1);
-  border:3px dashed rgba(255,255,255,.45);
+  background:#fff6e9;
+  border:3px dashed #f0c078;
+  color:#a5701e;
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;
 }
 .photo-slot .frame .ph-emoji{font-size:32px;line-height:1.4}
@@ -453,7 +465,7 @@ section{padding:52px 18px}
 .photo-slot .frame.loaded{border-style:solid;border-color:#fff;background:#fff}
 .photo-slot .frame.loaded .ph-emoji,.photo-slot .frame.loaded .ph-text{display:none}
 .photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.photo-slot figcaption{text-align:center;font-size:12.5px;font-weight:700;margin-top:7px;color:#ffe8d1}
+.photo-slot figcaption{text-align:center;font-size:12.5px;font-weight:700;margin-top:7px;color:var(--ink)}
 
 /* ===== gallery ===== */
 .gallery{background:#fff8e1}
@@ -722,7 +734,11 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
       <h3 class="pop">🐟 ただいまの空き状況</h3>
       <div class="remaining" id="remainingText">残り <span id="remainingNum">--</span><span class="unit">名</span></div>
       <p class="counter-sub"><span id="countText">現在の予約数を確認中…</span>（定員20名）</p>
-      <div class="fish-slots" id="fishSlots" aria-hidden="true"></div>
+      <div class="gauge" aria-hidden="true">
+        <div class="gauge-fill" id="gaugeFill"></div>
+        <span class="gauge-fish" id="gaugeFish">🐟</span>
+      </div>
+      <div class="gauge-labels" aria-hidden="true"><span>予約 0名</span><span>定員 20名</span></div>
       <div class="full-msg" id="fullMsg">🙇 満員御礼！定員に達しました 🙇</div>
       <p class="count-loading" id="countNote">※ 空き状況は自動で更新されます</p>
     </div>
@@ -864,26 +880,17 @@ footer .small{font-size:clamp(11.5px,3.2vw,13px);opacity:.8;margin-top:8px;line-
 <script>
 (function(){
   var CAPACITY = 20;
-  var fishSVG = '<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg"><path class="body" d="M8 30 Q30 8 60 18 Q82 24 92 30 Q82 36 60 42 Q30 52 8 30Z" fill="#00a6d6"/><path class="body" d="M92 30 L100 18 L97 30 L100 42Z" fill="#00a6d6"/><circle cx="24" cy="26" r="4" fill="#fff"/><circle cx="25" cy="26" r="2" fill="#1d3557"/></svg>';
-
-  // 魚スロット生成
-  var slotsEl = document.getElementById('fishSlots');
-  for (var i = 0; i < CAPACITY; i++) {
-    var d = document.createElement('div');
-    d.className = 'slot';
-    d.innerHTML = fishSVG;
-    slotsEl.appendChild(d);
-  }
 
   function render(count) {
     var remaining = Math.max(0, CAPACITY - count);
+    var pct = Math.min(100, count / CAPACITY * 100);
     document.getElementById('remainingNum').textContent = remaining;
     document.getElementById('fixedRemaining').textContent = remaining;
     document.getElementById('countText').textContent = '現在 ' + count + '名 が予約済み';
-    var slots = slotsEl.children;
-    for (var i = 0; i < CAPACITY; i++) {
-      slots[i].className = i < count ? 'slot taken' : 'slot';
-    }
+    document.getElementById('gaugeFill').style.width = pct + '%';
+    document.getElementById('gaugeFish').style.left = Math.max(4, Math.min(96, pct)) + '%';
+    var labels = document.querySelector('.gauge-labels span');
+    if (labels) labels.textContent = '予約 ' + count + '名';
     var form = document.getElementById('entryForm');
     var fullMsg = document.getElementById('fullMsg');
     if (remaining <= 0) {
