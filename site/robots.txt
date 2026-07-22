@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mifune-ayu-fes.netlify.app/sitemap.xml
